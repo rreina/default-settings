@@ -52,3 +52,6 @@ subdir('gtk')
 
 # Plymouth HiDPI support
 subdir('plymouth')
+
+# GRUB suspend mode
+subdir('grub')

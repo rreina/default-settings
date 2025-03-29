@@ -1,0 +1,10 @@
+[Unit]
+Description=Configure Grub for suspend mode
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/grub-suspend-mode.sh
+ExecStartPost=/bin/bash -c "systemctl disable grub-suspend-mode.service; rm -f /etc/systemd/system/grub-suspend-mode.service /usr/local/bin/grub-suspend-mode.sh"
+
+[Install]
+WantedBy=multi-user.target

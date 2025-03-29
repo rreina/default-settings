@@ -18,4 +18,8 @@ ln -s /usr/share/apparmor/extra-profiles/bwrap-userns-restrict /etc/apparmor.d/ 
 if [ -x /bin/systemctl ] || [ -x /usr/bin/systemctl ]; then
     systemctl preset plymouth-hidpi.service || true
     systemctl enable plymouth-hidpi.service || true
+
+    # Grub suspend mode support
+    systemctl preset grub-suspend-mode.service || true
+    systemctl enable grub-suspend-mode.service || true
 fi
